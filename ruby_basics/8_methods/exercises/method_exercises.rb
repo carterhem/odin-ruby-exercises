@@ -7,17 +7,28 @@
 # return value: the number's ASCII character (https://www.ascii-code.com/)
 # hint: use Integer#chr
 
+def ascii_translator(number)
+  number.chr
+  # implicit return is helping us out here
+end
+
 
 # method name: #common_sports
 # parameters: current_sports and favorite_sports (both arrays)
 # return value: an array containing items in both arrays
 # hint: use Array#intersection
+def common_sports(current_sports, favorite_sports)
+  current_sports & favorite_sports
+end
 
 
 # method name: #alphabetical_list
 # parameter: games (an array)
 # return value: games, alphabetically sorted and duplicates removed
 # hint: chain Array#sort and Array#uniq together
+def alphabetical_list(games)
+  games.sort.uniq
+end
 
 
 # method name: #lucky_number
