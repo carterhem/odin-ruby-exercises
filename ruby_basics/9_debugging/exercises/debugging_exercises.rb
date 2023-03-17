@@ -1,16 +1,19 @@
+
+require 'pry-byebug'
 # First, we're going to practice reading the Stack Trace
 # Don't look at this method prior to running the test
 # Type 'rspec' into the terminal to run Rspec
 # Once this test fails, have a look at the Stack Trace
 # Try to see if you can work your way from the last line, the bottom of the stack
-# To the top, the first line, where the error occured, and ONLY THEN fix the error
+# To the top, the first line, where the error occurred, and ONLY THEN fix the error
 
 def decrement_smallest_value(nested_array)
   smallest_value = nested_array.flatten.max
   nested_array.each do |array|
     array.each do |current_value|
       if smallest_value > current_value
-        smallest_value = current_valu
+        smallest_value = current_value
+        # problem was current_value was spelled wrong
       end
     end
   end
@@ -24,7 +27,8 @@ def increment_greatest_value(nested_array)
   greatest_value = nested_array.flatten.min
   nested_array.each do |array|
     array.each do |current_value|
-      if greatest_value < nil
+      if greatest_value < current_value
+        # problem was greatest value was being compared to nil, not current value
         greatest_value = current_value
       end
     end
@@ -36,9 +40,13 @@ end
 # Use p and puts in order to find what's wrong with our method
 
 def isogram?(string)
+  # problem was split was missing what to split on
   original_length = string.length
-  string_array = string.downcase.split
+  # p original_length
+  string_array = string.downcase.split("")
+  # p string_array
   unique_length = string_array.uniq.length
+  # p unique_length
   original_length == unique_length
 end
 
@@ -51,6 +59,15 @@ end
 
 def yell_greeting(string)
   name = string
-  name = name.downcase
+  # binding.pry
+  name = name.upcase
+  # binding.pry
   greeting = "WASSAP, #{name}!"
+  # binding.pry
 end
+
+# yell_greeting("Bob")
+# had some trouble with this example
+# initially tried rdbg, but then remembered to use pry-byebug
+# added in the function call to this page so I can actually see whats happening
+# had to comment out binding.pry's to get test to pass
