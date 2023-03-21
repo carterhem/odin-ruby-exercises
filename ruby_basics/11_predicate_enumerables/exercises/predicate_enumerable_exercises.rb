@@ -21,8 +21,15 @@ end
 
 def correct_format?(word_list)
   # use #none? to return true when none of the words in the word_list (array) are in upcase
+  word_list.none? {|word| word == word.upcase}
+  # we want none of the words to be upcase
+  # so, we check to say does this word match this word completely upcase
+  # if none of the words match, then return true
 end
 
 def valid_scores?(score_list, perfect_score)
   # use #one? to return true when only one value in the score_list (hash) is equal to the perfect_score (number)
+  score_list.one?{|key, value| value == perfect_score}
+  # can't find much about this method
+  # however, looks like you can split key and value apart, which means for each element we are iterating over, we can compare the value to perfect_score full array
 end
