@@ -80,4 +80,13 @@ def find_favorite(array_of_hash_objects)
 
   # TIP: there will only be a maximum of one hash in the array that will
   # return true to the :is_my_favorite? key
+
+  array_of_hash_objects.each do |hash_object|
+    # p hash_object[:is_my_favorite?]
+    if hash_object[:is_my_favorite?] == true
+      return hash_object
+    end
+  end
+  return nil
+  # had to move this outside the each loop as otherwise if there were any times when :is_my_favorite? was false, then it would return nil and not check another pair
 end
