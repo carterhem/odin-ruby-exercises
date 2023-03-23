@@ -35,16 +35,23 @@ def delete_seat_from_row(chart, row_index, seat_index)
   # the chart, then return the chart
 
   # Hint: explore the ruby docs to find a method for deleting from an array!
+  chart[row_index].delete_at(seat_index)
+  # find the position of the intended row in the chart
+  # use delete_at to use seat_index to delete
+  chart
+  # return chart as always as I haven't saved it in a variable
 end
 
 def delete_row_from_chart(chart, row_index)
   # take a chart and delete the row at row_index of the chart,
+  chart.delete_at(row_index)
+  # remember that since we are using index we need to use delete_at, NOT delete
   # then return the chart
+  chart
 end
 
 def count_empty_seats(chart)
   # take a chart and return the number of empty (nil) seats in it
-
   # NOTE: `chart` should **not** be mutated
 end
 
