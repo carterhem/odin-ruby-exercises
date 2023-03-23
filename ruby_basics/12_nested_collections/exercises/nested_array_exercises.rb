@@ -25,6 +25,9 @@ end
 def add_another_row(chart, row_to_add)
   # take a chart and add row_to_add to the end of the chart,
   # then return the chart.
+  # chart << row_to_add # either this method OR the below work
+  chart.push(row_to_add)
+  chart
 end
 
 def delete_seat_from_row(chart, row_index, seat_index)
