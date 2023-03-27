@@ -47,4 +47,5 @@ These exercises are designed to complement the [Ruby Basic lessons](https://www.
 
 #### 12.Nested Collections
 
-- [ ] Nested Collection Exercises
+- [ ] Nested Collection - Array Exercises
+- [ ] Nested Collection - Hash Exercises
